@@ -61,6 +61,6 @@ public class ManageAppointment {
     	  System.out.println("has an appointment on :"+ appointmentDate);
     	  System.out.println("Appointment Time:"+ appointmentTime);
     	  System.out.println("With the designer:" + designerName);
-     }
+     }//salma
 }
 
