@@ -17,37 +17,37 @@ import java.time.LocalDate;
 *19014273, 18 Aug 2020 11:25:38 am
  */
 public class ManageRequestquotation {
-	private String PropertyType;
+	private String propertyType;
 	private double AreaSize;
-	private int Contact;
+	private int contact;
 	private String email;
 	private double budget;
 	private LocalDate completedate;
 	private String renovationType;
 	private String renoStyle;
-	private String SRequest;
+	private String srequest;
 	
 
-	public ManageRequestquotation(String PropertyType, double AreaSize,int Contact,String email,double budget,
-			LocalDate completedate,String renovationType,String renoStyle,String SRequest){
-		this.PropertyType = PropertyType;
+	public ManageRequestquotation(String propertyType, double AreaSize,int Contact,String email,double budget,
+			LocalDate completedate,String renovationType,String renoStyle,String srequest){
+		this.propertyType = propertyType;
 		this.AreaSize = AreaSize;
-		this.Contact = Contact;
+		this.contact = contact;
 		this.email = email;
 		this.budget = budget;
 		this.completedate = completedate;
 		this.renovationType = renovationType;
 		this.renoStyle = renoStyle;
-		this.SRequest = SRequest;
+		this.srequest = srequest;
 		
 	}
 
-	public String getPropertyType() {
-		return PropertyType;
+	public String getpropertyType() {
+		return propertyType;
 	}
 
 	public void setPropertyType(String propertyType) {
-		PropertyType = propertyType;
+		propertyType = propertyType;
 	}
 
 	public double getAreaSize() {
@@ -55,15 +55,15 @@ public class ManageRequestquotation {
 	}
 
 	public void setAreaSize(double areaSize) {
-		AreaSize = areaSize;
+		areaSize = areaSize;
 	}
 
-	public int getContact() {
-		return Contact;
+	public int getcontact() {
+		return contact;
 	}
 
 	public void setContact(int contact) {
-		Contact = contact;
+		contact = contact;
 	}
 
 	public String getEmail() {
@@ -106,12 +106,12 @@ public class ManageRequestquotation {
 		this.renoStyle = renoStyle;
 	}
 
-	public String getSRequest() {
-		return SRequest;
+	public String getsrequest() {
+		return srequest;
 	}
 
-	public void setSRequest(String sRequest) {
-		SRequest = sRequest;
+	public void setSRequest(String srequest) {
+		srequest = srequest;
 	}
 	
 	
