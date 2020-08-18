@@ -16,6 +16,8 @@ import java.time.LocalDate;
 *
 *19014273, 18 Aug 2020 11:25:38 am
  */
+
+//YEE CHENG HAN
 public class ManageRequestquotation {
 	private String propertyType;
 	private double AreaSize;
