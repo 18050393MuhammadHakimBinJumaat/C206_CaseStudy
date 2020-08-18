@@ -30,7 +30,7 @@ public class ManageRequestquotation {
 	private String srequest;
 	
 
-	public ManageRequestquotation(String propertyType, double AreaSize,int Contact,String email,double budget,
+	public ManageRequestquotation(String propertyType, double AreaSize,int contact,String email,double budget,
 			LocalDate completedate,String renovationType,String renoStyle,String srequest){
 		this.propertyType = propertyType;
 		this.AreaSize = AreaSize;
@@ -112,7 +112,7 @@ public class ManageRequestquotation {
 		return srequest;
 	}
 
-	public void setSRequest(String srequest) {
+	public void setsrequest(String srequest) {
 		srequest = srequest;
 	}
 	
