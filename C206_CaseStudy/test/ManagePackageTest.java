@@ -1,3 +1,7 @@
+import static org.junit.Assert.assertNotNull;
+
+import org.junit.Test;
+
 /**
  * I declare that this code was written by me.
  *I will not copy or allow others to copy my code.
@@ -8,5 +12,11 @@
 public class ManagePackageTest {
 //yo
 	
+	
+	
+	@Test
+	public void addPackageTest() {
+		assertNotNull("Check if there is valid Package ");
+	}
 	
 }
