@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 /**
  * I declare that this code was written by me.
@@ -62,7 +63,28 @@ public class Appointment {
 	    	  System.out.println("Appointment Time:"+ appointmentTime);
 	    	  System.out.println("With the designer:" + designerName);
 	     }//salma
-	}
+		/**
+		 * @param appointmentList
+		 * @param ap2
+		 */
+		public static void addAppointment(ArrayList<Appointment> appointmentList, Appointment ap1) {
+			// TODO Auto-generated method stub
+			
+		}
+		/**
+		 * @param appointmentList
+		 * @param ap2
+		 */
+		/**
+		 * @param appointmentList
+		 * @param ap2
+		 */
+					
+		}
+		
+			
+		
+	
 
 
 
