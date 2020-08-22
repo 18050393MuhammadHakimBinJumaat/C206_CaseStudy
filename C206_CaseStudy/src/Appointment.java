@@ -10,14 +10,14 @@ import java.time.LocalDateTime;
  */
 
 public class Appointment {
-	public class ManageAppointment {
+	
 		 private String customerName;
 	     private String designerName;
 	     private LocalDateTime appointmentTime;
 	     private LocalDate appointmentDate;
 	     
 	     
-	     public ManageAppointment(String customerName, String designerName, LocalDate appointmentDate, LocalDateTime appointmentTime) {
+	     public Appointment(String customerName, String designerName, LocalDate appointmentDate, LocalDateTime appointmentTime) {
 	     this.customerName = customerName;
 	     this.designerName = designerName;
 	     this.appointmentDate = appointmentDate;
@@ -65,4 +65,4 @@ public class Appointment {
 	}
 
 
-}
+

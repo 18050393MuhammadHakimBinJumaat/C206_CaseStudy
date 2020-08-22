@@ -11,7 +11,7 @@ import java.util.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class ManageAppointmentTest {
+public class AppointmentTest {
       private String customerName;
       private String designerName;
       private LocalDateTime appointmentDate;
