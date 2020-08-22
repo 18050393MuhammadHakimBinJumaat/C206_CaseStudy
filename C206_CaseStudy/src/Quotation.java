@@ -14,6 +14,6 @@
 *
 *19014273, 18 Aug 2020 11:25:28 am
  */
-public class ManageQuotation {
+public class Quotation {
 
 }
