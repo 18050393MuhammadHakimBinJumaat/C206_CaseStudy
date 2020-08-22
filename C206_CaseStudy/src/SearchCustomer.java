@@ -4,7 +4,7 @@ public class SearchCustomer {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int option = 4;
+	
 		ArrayList<Customer> CustomerList = new ArrayList<Customer>();
 		String town = Helper.readString("Enter town > ");
 		boolean found = false;

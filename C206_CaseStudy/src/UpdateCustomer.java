@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class UpdateCustomer {
 	
 public static void main(String[] args) {
-	int option = 5;
+	
 	ArrayList<Customer> CustomerList = new ArrayList<Customer>();
 	String name = Helper.readString("Enter name of user to edit > ");
 	boolean found = false;

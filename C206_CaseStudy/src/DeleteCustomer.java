@@ -3,7 +3,7 @@ import java.util.ArrayList;
 //Timorthy
 public class DeleteCustomer {
 	public static void main(String[] args) {
-		int option = 3;
+		
 		ArrayList<Customer> CustomerList = new ArrayList<Customer>();
 		String name = Helper.readString("Enter name > ");
 		boolean found = false;

@@ -2,13 +2,13 @@
 public class Customer {
 
   private String name;
-    private String role;
-    private String email;
-    private String password;
-    private String status;
-    private String town;
-    private boolean blocked;
-    private int attempts;
+  private String role;
+  private String email;
+  private String password;
+  private String status;
+  private String town;
+  private boolean blocked;
+  private int attempts;
 
     public Customer(String name, String role, String email, String password, String status,String town) {
         this.name = name;

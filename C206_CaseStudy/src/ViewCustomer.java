@@ -5,7 +5,7 @@ public class ViewCustomer {
 	
 	public static void main(String[] args) {
 		
-		int option = 2;
+	
 		ArrayList<Customer> CustomerList = new ArrayList<Customer>();
 		for (Customer c : CustomerList) {
 			String output = String.format("Name: %s\nRole: %s\nEmail: %s\nPassword: %s\nStatus: %s\n Town%s\n",

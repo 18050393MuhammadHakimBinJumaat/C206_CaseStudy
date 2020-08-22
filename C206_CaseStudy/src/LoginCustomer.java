@@ -4,7 +4,7 @@ public class LoginCustomer {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int option = 6;
+		
 		ArrayList<Customer> CustomerList = new ArrayList<Customer>();
 		String email = Helper.readString("Enter email > ");
 		String password = Helper.readString("Enter password > ");
