@@ -1,37 +1,18 @@
-import java.util.ArrayList;
-
-/**
- * I declare that this code was written by me
-  * I will not copy or allow others to copy my code.
- * I understand that copying code is considered as plagiarism.
-*
- * 19014273, 22 Aug 2020 8:01:02 pm
-
- */
-
-/**
- * I declare that this code was written by me.
- *I will not copy or allow others to copy my code.
- * I understand that copying code is considered as plagiarism.
-*
-*19014273, 22 Aug 2020 8:01:02 pm
- */
-public class ViewRequestQuotation {
-//ChengHan
 
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		ArrayList<RequestQuotation> QuotList = new ArrayList<RequestQuotation>();
-		for (RequestQuotation c : QuotList) {
-			String output = String.format("Name: %s\nRole: %s\nEmail: %s\nPassword: %s\nStatus: %s\n Town%s\n",
-					c.getName(), c.getRole(), c.getEmail(), c.getPassword(), c.getStatus(), c.getTown());
-			System.out.println(output);
-		// TODO Auto-generated method stub
+
+public static String retrieveAllRequestQuotation(ArrayList<RequestQuotation> requestquotationList) {
+		String output = "";
+		for (int i = 0; i < requestquotationList.size(); i++) {
+
+			output += String.format("%-15s %-10.2f %-10d %-20s %-10.2f %-15s %-15s %-15s %-15s\n",
+					requestquotationList.get(i).getPropertyType(), requestquotationList.get(i).getAreaSize(),
+					requestquotationList.get(i).getContact(), requestquotationList.get(i).getEmail(),
+					requestquotationList.get(i).getBudget(), requestquotationList.get(i).getCompletedate(),
+					requestquotationList.get(i).getRenovationType(), requestquotationList.get(i).getRenoStyle(),
+					requestquotationList.get(i).getSRequest());
+
+		}
+		return output;
 
 	}
-
-}
-}
