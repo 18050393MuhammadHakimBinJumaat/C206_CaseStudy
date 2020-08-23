@@ -1,24 +1,7 @@
 import java.time.LocalDate;
 
-/**
- * I declare that this code was written by me
-  * I will not copy or allow others to copy my code.
- * I understand that copying code is considered as plagiarism.
-*
- * 19014273, 18 Aug 2020 11:25:38 am
-
- */
-
-/**
- * I declare that this code was written by me.
- *I will not copy or allow others to copy my code.
- * I understand that copying code is considered as plagiarism.
-*
-*19014273, 18 Aug 2020 11:25:38 am
- */
-
 //YEE CHENG HAN
-public class ManageRequestquotation {
+public class RequestQuotation {
 	private String propertyType;
 	private double AreaSize;
 	private int contact;
@@ -30,7 +13,7 @@ public class ManageRequestquotation {
 	private String srequest;
 	
 
-	public ManageRequestquotation(String propertyType, double AreaSize,int contact,String email,double budget,
+	public RequestQuotation(String propertyType, double AreaSize,int contact,String email,double budget,
 			LocalDate completedate,String renovationType,String renoStyle,String srequest){
 		this.propertyType = propertyType;
 		this.AreaSize = AreaSize;
@@ -114,6 +97,14 @@ public class ManageRequestquotation {
 
 	public void setsrequest(String srequest) {
 		srequest = srequest;
+	}
+
+	/**
+	 * @return
+	 */
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
