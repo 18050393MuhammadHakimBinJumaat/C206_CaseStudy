@@ -13,7 +13,7 @@ public class ViewRequestQuotation {
 		for(RequestQuotation Q : QuotList) {
 		
 		String output = String.format("%-15s %-10s %-10s %-20s %-10s %-15s %-15s %-15s %-15s \n", "PROPERTY TYPE",
-				"AREA SIZE", "CONTACT", "EMAIL", "BUDGET", "COMPLETE DATE", "RENO TYPE", "RENO STYLE", "URGET");
+				"AREA SIZE", "CONTACT", "EMAIL", "BUDGET RANGE", "COMPLETETION DATE", "RENOVATION TYPE", "RENOVATION STYLE", "URGENCY");
 		System.out.println(output);
 	}
 
