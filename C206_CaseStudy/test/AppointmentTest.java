@@ -39,7 +39,7 @@ public class AppointmentTest {
   	@Before
   	public void setUp() throws Exception {
   		// prepare test data
-  		ap1 = new Appointment("Hakim", "Wen Qong" ,2020-10-8, );
+  		ap1 = new Appointment("Hakim", "Wen Qong" ,2020-10-8,);
   		ap2 = new Appointment("Hakim", "Wen Qong" ,2020-11-10 ,);
   	
 
