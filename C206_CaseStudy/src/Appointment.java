@@ -12,21 +12,21 @@ import java.util.ArrayList;
 
 public class Appointment {
 	
-		 private String customerName;
+		 private String CustomerName;
 	     private String designerName;
 	     private LocalDateTime appointmentTime;
 	     private LocalDate appointmentDate;
 	     
 	     
-	     public Appointment(String customerName, String designerName, LocalDate appointmentDate, LocalDateTime appointmentTime) {
-	     this.customerName = customerName;
+	     public Appointment(String CustomerName, String designerName, LocalDate appointmentDate, LocalDateTime appointmentTime) {
+	     this.CustomerName = CustomerName;
 	     this.designerName = designerName;
 	     this.appointmentDate = appointmentDate;
 	     this.appointmentTime = appointmentTime;
 	     }
 	     public String 
 	     getcustomerName() {
-	    	 return customerName;
+	    	 return CustomerName;
 	     }
 	     public String
 	     getdesignerName() {
@@ -41,8 +41,8 @@ public class Appointment {
 	    	 return appointmentDate;
 	     }
 	     public void
-	     setCustomerName(String customerName) {
-	    	 this.customerName = customerName;
+	     setCustomerName(String CustomerName) {
+	    	 this.CustomerName = CustomerName;
 	     }
 	     public void
 	     setDesignerName(String DesignerName) {
@@ -58,27 +58,24 @@ public class Appointment {
 	     }
 	     public void 
 	     showDetailsof() {
-	    	  System.out.println("The customer: "+ customerName);
+	    	  System.out.println("The customer: "+ CustomerName);
 	    	  System.out.println("has an appointment on :"+ appointmentDate);
 	    	  System.out.println("Appointment Time:"+ appointmentTime);
 	    	  System.out.println("With the designer:" + designerName);
 	     }//salma
-		/**
-		 * @param appointmentList
-		 * @param ap2
-		 */
-		public static void addAppointment(ArrayList<Appointment> appointmentList, Appointment ap1) {
+					
+		
+		
+		 
+		public String getName() {
 			// TODO Auto-generated method stub
-			
+			return null;
 		}
 		/**
-		 * @param appointmentList
-		 * @param ap2
+		 * @return
 		 */
-		/**
-		 * @param appointmentList
-		 * @param ap2
-		 */
+	
+		
 					
 		}
 		
