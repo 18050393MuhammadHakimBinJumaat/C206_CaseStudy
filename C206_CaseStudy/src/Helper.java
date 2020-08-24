@@ -1,6 +1,7 @@
 
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.regex.Pattern;
@@ -270,5 +271,14 @@ public class Helper {
 
 	public static boolean sameDate(Date one, Date two) {
 		return getDay(one) == getDay(two) && getMonth(one) == getMonth(two) && getYear(one) == getYear(two);
+	}
+
+	/**
+	 * @param string
+	 * @return
+	 */
+	public static LocalDateTime readLocalDateTime(String string) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

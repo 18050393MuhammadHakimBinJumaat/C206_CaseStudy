@@ -31,14 +31,16 @@ public class AddRequestQuotation {
 		String Email = Helper.readString("Enter Email> ");
 		double Budget = Helper.readDouble("Enter Budget : ");
 		String Date = Helper.readString("Enter Complete Date :");
-		LocalDate completeDate = LocalDate.parse(date);
+		LocalDate completeDate = LocalDate.parse(Date);
 		String RenoType = Helper.readString("Enter Renovation Type : ");
 		String RenoStyle = Helper.readString("Enter Renovation Style : ");
 		String Urg = Helper.readString("Is it urgent > ");
 
 		RequestQuotation rq = new RequestQuotation(PropType, Areasize, Contact, Email, Budget, completeDate, RenoType, RenoStyle, Urg);
-		return rq;
+		
 		ArrayList<RequestQuotation> QuotList = new ArrayList<RequestQuotation>();
+		QuotList.add(rq);
+		System.out.println("Request Quotation List Added");
 		// TODO Auto-generated method stub
 
 	}
