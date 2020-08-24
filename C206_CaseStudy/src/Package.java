@@ -1,22 +1,25 @@
+import java.time.LocalDate;
 
 /**
  * I declare that this code was written by me.
  *I will not copy or allow others to copy my code.
  * I understand that copying code is considered as plagiarism.
 *
-*18050393, 18 Aug 2020 11:28:10 am
+*18050393, 22 Aug 2020 11:28:10 am
  */
 //Hakim
-public class ManagePackage {
+public class Package {
 	private String addPackage ;
 	private String viewPackage;
 	private String deletePackage;
-	public ManagePackage(String addPackage, String viewPackage, String deletePackage) {
+	public Package(String addPackage, String viewPackage, String deletePackage) {
 		super();
 		this.addPackage = addPackage;
 		this.viewPackage = viewPackage;
 		this.deletePackage = deletePackage;
 	}
+	
+	
 	public String getAddPackage() {
 		return addPackage;
 	}
@@ -35,7 +38,4 @@ public class ManagePackage {
 	public void setDeletePackage(String deletePackage) {
 		this.deletePackage = deletePackage;
 	}
-	
-	
-
 }
