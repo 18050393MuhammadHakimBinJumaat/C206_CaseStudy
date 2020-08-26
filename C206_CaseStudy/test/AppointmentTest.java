@@ -63,7 +63,7 @@ public class AppointmentTest {
 		AppointmentTest.addAppointment(AppointmentList, ap2);
 		assertEquals("Test that Appointment arraylist size is 2?", 2, AppointmentList.size());
 	}
-
+//salma
 	/**
 	 * @param appointmentList2
 	 * @param ap12
