@@ -21,7 +21,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class AppointmentTest {
-      private String customerName;
+      private static final LocalDate AppointmentList1 = null;
+	private String customerName;
       private String designerName;
       private LocalDateTime appointmentDateTime;
       private LocalDate appointmentDate;
@@ -39,8 +40,8 @@ public class AppointmentTest {
   	@Before
   	public void setUp() throws Exception {
   		// prepare test data
-  		ap1 = new Appointment("Hakim", "Wen Qong" ,2020-10-8,);
-  		ap2 = new Appointment("Hakim", "Wen Qong" ,2020-11-10 ,);
+  		//ap1 = new Appointment("Hakim", "Wen Qong" ,2020-10-8,);
+  		//ap2 = new Appointment("Hakim", "Wen Qong" ,2020-11-10 ,);
   	
 
   		AppointmentList= new ArrayList<Appointment>();
@@ -59,7 +60,7 @@ public class AppointmentTest {
 		assertSame("Test that Appointment is added same as 1st appontment of the list?", ap1, AppointmentList.get(0));
 		
 		//Add another item. test The size of the list is 2?
-		Appointment.addAppointment(AppointmentList, ap2);
+		AppointmentTest.addAppointment(AppointmentList, ap2);
 		assertEquals("Test that Appointment arraylist size is 2?", 2, AppointmentList.size());
 	}
 
@@ -67,8 +68,10 @@ public class AppointmentTest {
 	 * @param appointmentList2
 	 * @param ap12
 	 */
-	private static void addAppointment(ArrayList<Appointment> appointmentList2, Appointment ap12) {
+  	private static void addAppointment(ArrayList<Appointment> appointmentList2, Appointment ap12) {
 		// TODO Auto-generated method stub
 		
+		
+  	}
 	}
-}
+

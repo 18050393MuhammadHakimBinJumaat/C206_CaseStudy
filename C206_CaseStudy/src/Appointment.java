@@ -74,6 +74,14 @@ public class Appointment {
 		/**
 		 * @return
 		 */
+		/**
+		 * @param appointmentlist1
+		 * @return
+		 */
+		public static String retrieveAllAppointment(LocalDate appointmentlist1) {
+			// TODO Auto-generated method stub
+			return null;
+		}
 	
 		
 					
