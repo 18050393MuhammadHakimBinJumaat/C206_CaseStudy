@@ -22,7 +22,7 @@ public class ViewAppointment {
 					a.getcustomerName(), a.getdesignerName());
 			System.out.println(output);
 		}
-	}
+	}//
 
 }
 //salma.,
