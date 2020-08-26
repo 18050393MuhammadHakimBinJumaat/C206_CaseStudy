@@ -18,8 +18,8 @@ public class QuotationFunction {
         for (int i = 0; i < Quotation.size(); i++) {
 
 
-            output += String.format("%-15s %-20s %-15d %-20s\n",Quotation.get(i).getName(),Quotations.get(i).getCostRange()
-                                    ,Quotation.get(i).getSDRange(),Quotation.get(i).getType());
+            output += String.format("%-15s %-20s %-15d %-20s\n",Quotation.get(i).getName(),Quotation.get(i).getCostRange()
+                                    ,Quotation.get(i).getCostRange(),Quotation.get(i).getType());
         }
             System.out.println(output);
     }
@@ -45,11 +45,11 @@ public class QuotationFunction {
             String Dname =Helper.readString("Enter current Designer Name >");
             if(Dname.equals(Quotation.get(i).getName())){
                 String NewDname = Helper.readString("Enter new Designer Name >");
-                NewDname = Quotation.get(i).getName();
+                NewDname = (String) Quotation.get(i).getName();
                 String NewCRange = Helper.readString("Enter new Cost Range  >");
                 NewCRange = Quotation.get(i).getCostRange();
                 String NewRDRange  = Helper.readString("Enter new Renovate Date Range >");
-                NewRDRange = Quotation.get(i).getSDRange();
+                NewRDRange = Quotation.get(i).getCostRange();
                 String NewType = Helper.readString("Enter new Renovation Type >");
                 NewType = Quotation.get(i).getType();
             
