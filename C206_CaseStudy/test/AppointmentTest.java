@@ -71,7 +71,24 @@ public class AppointmentTest {
   	private static void addAppointment(ArrayList<Appointment> appointmentList2, Appointment ap12) {
 		// TODO Auto-generated method stub
 		
-		
+  		
+  		public void retrieveAppointmentTest() {
+  			// Test if Item list is not null but empty -boundary
+  			assertNotNull("Test if there is valid Promotion arraylist to retrieve item", AppointmentList1);
+  			
+  			//test if the list of Promotions retrieved from the SourceCentre is empty - boundary
+  			String allAppointment= Appointment.retrieveAllAppointment(AppointmentList1);
+  			String testOutput = "";
+  			assertEquals("Check that ViewAllpromotionList", testOutput, allAppointment);
+  			
+  			//Given an empty list, after adding 2 items, test if the size of the list is 2 - normal
+  			Appointment.addPromotion(AppointmentList1, ap1);
+  			Appointment.addPromotion(AppointmentList1, ap2);
+  			assertEquals("Test that Promotion arraylist size is 2", 2, AppointmentList1.size());
+  			
+  			
+  		}
+  		
   	}
 	}
 
