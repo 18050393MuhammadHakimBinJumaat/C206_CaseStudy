@@ -11,6 +11,11 @@ public class C206_CaseStudy {
 		// TODO Auto-generated method stub
 		
 	}
+	private static void requestquotationMenu() {
+		System.out.println("1. View all Request Quotation");
+		System.out.println("2. Remove Request Quotation");
+
+	}
 
 
 
