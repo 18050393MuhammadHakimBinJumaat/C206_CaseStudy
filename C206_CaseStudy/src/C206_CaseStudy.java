@@ -40,16 +40,16 @@ public class C206_CaseStudy {
 		requestquotationList.add(
 				new RequestQuotation("HDB", 100, 999, "123@gmail.com", 100.1, null, "Whole house", "modern", "none"));
 
-		// ArrayList Quotation (Alyssa)
+		// ArrayList Quotation 
 		ArrayList<Quotation> manageQuotationList = new ArrayList<Quotation>();
 
 		// ArrayList Customer
 		ArrayList<Customer> userCustList = new ArrayList<Customer>();
 
-		// JiaWei
+	
 		int option = 0;
 
-		// JiaWei
+		
 		while (option != OPTION_QUIT) {
 
 			menu();
@@ -132,7 +132,7 @@ public class C206_CaseStudy {
 					}
 
 					// Manage Customer
-					// Jonathan
+				
 				} else if (AdminOption == 2) {
 
 					C206_CaseStudy.packageMenu();
@@ -152,7 +152,7 @@ public class C206_CaseStudy {
 					}
 
 					// Manage Package
-					// Daven
+				
 				} else if (AdminOption == 3) {
 
 					C206_CaseStudy.requestquotationMenu();
@@ -169,7 +169,7 @@ public class C206_CaseStudy {
 					// Manage Customer
 				} else if (AdminOption == 4) {
 
-					// Alyssa
+					
 					// Manage Quotation
 					C206_CaseStudy.ManageQuotationMenu();
 
