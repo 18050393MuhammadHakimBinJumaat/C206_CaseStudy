@@ -567,9 +567,6 @@ public class C206_CaseStudy {
 	// ----------------------------------------Manage Request Quotation---------------------------------------------------//
 
 
-	
-	
-
 
 	//VIEW REQUEST QUOTATION
 	// Cheng Han
@@ -602,7 +599,7 @@ public class C206_CaseStudy {
 		LocalDate completeDate = LocalDate.parse(Date);
 		String RenoType = Helper.readString("Enter Renovation Type : ");
 		String RenoStyle = Helper.readString("Enter Renovation Style : ");
-		String Urg = Helper.readString("Is it urgent > ");
+		String Urg = Helper.readString("Urgency : ");
 
 		RequestQuotation rq = new RequestQuotation(PropType, Areasize, Contact, Email, Budget, completeDate, RenoType, RenoStyle, Urg);
 		
