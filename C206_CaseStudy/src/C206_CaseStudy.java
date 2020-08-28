@@ -318,37 +318,52 @@ public class C206_CaseStudy {
 	// -----------------------Manage Appointment-----------------------//
 // Add Appointment
 	//Salma
+	public static void addappointment() {
+		
+	
 String CustomerName = Helper.readString("Enter your Name > ");
 String designerName = Helper.readString("Enter your DesignerName > ");
 LocalDateTime appointmentTime = Helper.readLocalDateTime("Enter your appointment time");
 LocalDate appointmentDate = Helper.readLocalDate("Enter your appointment date");
 Appointment ap = new Appointment(CustomerName, designerName, appointmentDate,appointmentTime);
 
-ArrayList<Appointment> AppointmentList1 = new ArrayList<Appointment>();
+ArrayList<Appointment> AppointmentList = new ArrayList<Appointment>();
 AppointmentList.add(ap);
 System.out.println("Appointment Added");
+	}
+	
+	
+	
 	
 	// Delete Appointment
 // Salma
-
+public static void deleteappointment(){
 String CustomerName = Helper.readString("Enter Name of Customer for the appointment to be cancelled> ");
 
-ArrayList<Appointment> AppointmentList1 = new ArrayList<Appointment>();
-for (int i = 0; i < AppointmentList1.size(); i++) {
-		if (( AppointmentList1.get(i)).getName() == CustomerName) {
-		AppointmentList1.remove(i);
+ArrayList<Appointment> AppointmentList = new ArrayList<Appointment>();
+for (int i = 0; i < AppointmentList.size(); i++) {
+		if (( AppointmentList.get(i)).getName() == CustomerName) {
+		AppointmentList.remove(i);
 		System.out.println("Appointment Cancelled Successfully");
-	}
+		}
 }
+}
+
+
+
+
+
 //Update Appointment
-ArrayList<Appointment> AppointmentList1 = new ArrayList<Appointment>();
+// Salma
+public static void updateappointment() {
+ArrayList<Appointment> AppointmentList = new ArrayList<Appointment>();
 String CustomerName = Helper.readString("Enter name of Customer whose appointment is to be updated > ");
 boolean found = false;
-for (int i = 0; i < AppointmentList1.size(); i++) {
-	if (CustomerName.equalsIgnoreCase(AppointmentList1.get(i).getName())) {
+for (int i = 0; i < AppointmentList.size(); i++) {
+	if (CustomerName.equalsIgnoreCase(AppointmentList.get(i).getName())) {
 		String designerName = Helper.readString("Enter new designer name > ");
-		AppointmentList1.get(i).setCustomerName(CustomerName);
-		AppointmentList1.get(i).setDesignerName(designerName);
+		AppointmentList.get(i).setCustomerName(CustomerName);
+		AppointmentList.get(i).setDesignerName(designerName);
 		found = true;
 	}
 }
@@ -357,6 +372,10 @@ if (found == false) {
 } else {
 	System.out.println("Appointment successfully Updated");
 }
+
+
+
+
 	// -----------------------------Manage Package------------------------//
 
 	
