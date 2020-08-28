@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -323,246 +324,83 @@ public class C206_CaseStudy {
 	}
 
 	// --------------------------------------------Manage Appointment---------------------------------------------------//
+// Add Appointment
+	//Salma
+String CustomerName = Helper.readString("Enter your Name > ");
+String designerName = Helper.readString("Enter your DesignerName > ");
+LocalDateTime appointmentTime = Helper.readLocalDateTime("Enter your appointment time");
+LocalDate appointmentDate = Helper.readLocalDate("Enter your appointment date");
+Appointment ap = new Appointment(CustomerName, designerName, appointmentDate,appointmentTime);
 
+ArrayList<Appointment> AppointmentList1 = new ArrayList<Appointment>();
+AppointmentList.add(ap);
+System.out.println("Appointment Added");
+	
+	// Delete Appointment
+// Salma
 
-	private static <designerList> void adminAppointment() {
+String CustomerName = Helper.readString("Enter Name of Customer for the appointment to be cancelled> ");
 
-		appointmentMenu();
-		int appointmentOption = Helper.readInt("Enter an option > ");
-
-		if (appointmentOption == 1) {
-
-			// View All Designers
-			for (int i = 0; i < designerList.size(); i++) {
-				designerList.get(i).getName();
-			}
-
-		} else if (appointmentOption == 2) {
-			addAppointment();
-
-		} else if (appointmentOption == 3) {
-			// Update Appointment
-			String customerName = Helper.readString("Enter Customer Name: ");
-
-			for (int i = 0; i < appointmentList.size(); i++) {
-
-				if (customerName.equalsIgnoreCase(appointmentList.get(i).getcustomerName())) {
-
-					if (isAbleUpdate(appointmentList, appointmentList.get(i), customerName, LocalDate.now()) == true) {
-						updateMenu();
-						int adminOption = Helper.readInt("Enter Option: ");
-
-						if (adminOption == 1) {
-							String address = Helper.readString("Enter New Address: ");
-							appointmentList.get(i).setAddress(address);
-
-						} else if (adminOption == 2) {
-							String appointmentDate1 = Helper.readString("Enter new appointment Date (dd/mm/yyyy): ");
-							LocalDate localDate1 = LocalDate.parse(appointmentDate1, date_format);
-							appointmentList.get(i).setDateOfAppointment(localDate1);
-
-						} else if (adminOption == 2) {
-							String appointmentTime1 = Helper.readString("Enter new appointment Time (hh:ss): ");
-							LocalTime localtime2 = LocalTime.parse(appointmentTime1, time_format);
-							appointmentList.get(i).setTimeOfAppointment(localtime2);
-
-						} else if (adminOption == 2) {
-							String designerName1 = Helper.readString("Enter New Designer Name: ");
-							appointmentList.get(i).setDesignerName(designerName1);
-
-						} else {
-							System.out.println("Invaild Option!");
-						}
-
-					} else {
-						System.out.println("Unable to update!");
-					}
-
-				} else {
-					System.out.println("Customer not Found !");
-				}
-			}
-
-		} else if (appointmentOption == 4) {
-			removeAppointment();
-
-		} else if (appointmentOption == 5) {
-			// View Appointment
-			viewAllAppointment(appointmentList);
-
-		} else {
-
-		}
+ArrayList<Appointment> AppointmentList1 = new ArrayList<Appointment>();
+for (int i = 0; i < AppointmentList1.size(); i++) {
+		if (( AppointmentList1.get(i)).getName() == CustomerName) {
+		AppointmentList1.remove(i);
+		System.out.println("Appointment Cancelled Successfully");
 	}
-
-	private static void updateMenu() {
-
-		Helper.line(80, "-");
-		Helper.line(80, "-");
-		System.out.println("Option 1: Update Address");
-		System.out.println("Option 2: Update appointment Date");
-		System.out.println("Option 3: Update appointment Time");
-		System.out.println("Option 4: Update Designer");
+}
+//Update Appointment
+ArrayList<Appointment> AppointmentList1 = new ArrayList<Appointment>();
+String CustomerName = Helper.readString("Enter name of Customer whose appointment is to be updated > ");
+boolean found = false;
+for (int i = 0; i < AppointmentList1.size(); i++) {
+	if (CustomerName.equalsIgnoreCase(AppointmentList1.get(i).getName())) {
+		String designerName = Helper.readString("Enter new designer name > ");
+		AppointmentList1.get(i).setCustomerName(CustomerName);
+		AppointmentList1.get(i).setDesignerName(designerName);
+		found = true;
 	}
-
-	public static void addAppointment(ArrayList<Appointment> appointmentList, Appointment a) {
-
-		appointmentList.add(a);
-		System.out.println("Appointment added!");
-
-	}
-
-	public static void removeAppointment(ArrayList<Appointment> appointmentList, Appointment a, String name) {
-
-		for (int i = 0; i < appointmentList.size(); i++) {
-
-			if (name.equalsIgnoreCase(appointmentList.get(i).getCustomer())) {
-				appointmentList.remove(a);
-				System.out.println("Appointment removed!");
-
-			} else {
-				System.out.println("Customer not Found!");
-			}
-		}
-	}
-
-	public static String retrieveAllAppointment(ArrayList<Appointment> appointmentList) {
-
-		String output = "";
-
-		for (int i = 0; i < appointmentList.size(); i++) {
-
-			output += String.format("%-10s %-30s %-30s %-30s %-20s\n",
-					appointmentList.get(i).getDateOfAppointment().toString(),
-					appointmentList.get(i).getTimeOfAppointment().toString(), appointmentList.get(i).getDesignerName(),
-					appointmentList.get(i).getAddress(), appointmentList.get(i).getCustomer());
-		}
-
-		return output;
-	}
-
-	public static void viewAllAppointment(ArrayList<Appointment> appointmentList) {
-
-		Helper.line(120, "-");
-		String output = String.format("%-10s %-30s %-30s %-30s %-20s\n", "DATE", "TIME", "DESIGNER NAME", "ADDRESS",
-				"CUSTOMER NAME");
-		output += retrieveAllAppointment(appointmentList);
-		System.out.println(output);
-		Helper.line(120, "-");
-	}
-
-	public static boolean isAbleUpdate(ArrayList<Appointment> appointmentList, Appointment a, String name,
-			LocalDate currentDate) {
-
-		for (int i = 0; i < appointmentList.size(); i++) {
-
-			if (name.equalsIgnoreCase(appointmentList.get(i).getCustomer())) {
-
-				if (currentDate != appointmentList.get(i).getDateOfAppointment()
-						&& currentDate.isBefore(appointmentList.get(i).getDateOfAppointment())) {
-
-					System.out.println("Hi");
-
-					return true;
-				}
-			}
-		}
-
-		return false;
-	}
-
+}
+if (found == false) {
+	System.out.println("Customer with the name has no appointment");
+} else {
+	System.out.println("Appointment successfully Updated");
+}
 	// ------------------------------------------------Manage Package---------------------------------------------------//
 
-
-	// Retrieve All Package
-	public static String retrieveAllPackage(ArrayList<Package> packageList) {
-
-		String output = "";
-
-		for (int i = 0; i < packageList.size(); i++) {
-
-			output += String.format("%-10d %-30s %-15s %-15s $%-15.2f \n", packageList.get(i).getCode(),
-					packageList.get(i).getDescription(), packageList.get(i).getStart_Date(),
-					packageList.get(i).getEnd_Date(), packageList.get(i).getAmount());
-		}
-
-		return output;
-	}
-
-	// VIEW ALL Package
-	public static void viewAllPackage(ArrayList<Package> packageList) {
-
-		C206_CaseStudy.setHeader("Package LIST");
-		String output = String.format("%-10s %-30s %-15s %-15s %-15s \n", "CODE", "DESCRIPTION", "START DATE",
-				"END DATE", "AMOUNT");
-		output += retrieveAllPackage(packageList);
+	
+	// View package
+	//Hakim
+	ArrayList<Package> PackageList = new ArrayList<Package>();
+	
+	public static String viewAllPackage(ArrayList<Package>PackageList) {
+	for (Package p : PackageList) {
+		String output = String.format("Code: %s\nDescription: %s\nStartDate: %s\nPassword: %s\nStatus: %s\n Town%s\n",
+				p.getName(), p.getRole(), p.getEmail(), p.getPassword(), p.getStatus(), p.getTown());
 		System.out.println(output);
 	}
-
-	// ADD PACKAGE
-	public static Package inputPackage() {
-
-		int code = Helper.readInt("Enter code > ");
-		String description = Helper.readString("Enter description > ");
-		String start = Helper.readString("Enter Start Date> ");
-		String end = Helper.readString("Enter End Date> ");
-		LocalDate startdate = LocalDate.parse(start, format);
-		LocalDate enddate = LocalDate.parse(end, format);
-		double amount = Helper.readDouble("Enter amount of package> ");
-
-		Package pp = new Package(code, description, startdate, enddate, amount);
-		return pp;
 	}
+	// Add package
+	//Hakim
+	public static Package addPackage() {
+	String PropType = Helper.readString("Enter Property Type > ");
+	double Areasize = Helper.readDouble("Enter Areasize > ");
+	int Contact = Helper.readInt("Enter Contact> ");
+	String Email = Helper.readString("Enter Email> ");
+	double Budget = Helper.readDouble("Enter Budget : ");
+	String Date = Helper.readString("Enter Complete Date :");
+	LocalDate completeDate = LocalDate.parse(Date);
+	String RenoType = Helper.readString("Enter Renovation Type : ");
+	String RenoStyle = Helper.readString("Enter Renovation Style : ");
+	String Urg = Helper.readString("Is it urgent > ");
 
-	public static void addPackage(ArrayList<Package> packageList, Package pp) {
+	RequestQuotation rq = new RequestQuotation(PropType, Areasize, Contact, Email, Budget, completeDate, RenoType, RenoStyle, Urg);
+	
+	ArrayList<RequestQuotation> QuotList = new ArrayList<RequestQuotation>();
+	QuotList.add(rq);
+	System.out.println("Request Quotation List Added");
+	return null;
+}
 
-		packageList.add(pp);
-		System.out.println("Package added");
-	}
-
-	// UPDATE PACKAGE
-
-	public static void updatePackage(ArrayList<Package> packageList) {
-
-		int code = Helper.readInt("Enter the package's code > ");
-
-		for (int i = 0; i < packageList.size(); i++) {
-
-			if (packageList.get(i).getCode() == code) {
-
-				String description = Helper.readString("Enter new description > ");
-				String start = Helper.readString("Enter new Start Date> ");
-				String end = Helper.readString("Enter new End Date> ");
-				LocalDate startdate = LocalDate.parse(start, format);
-				LocalDate enddate = LocalDate.parse(end, format);
-				double amount = Helper.readDouble("Enter new amount of package> ");
-
-				packageList.get(i).setDescription(description);
-				packageList.get(i).setStart_Date(startdate);
-				packageList.get(i).setEnd_Date(enddate);
-				packageList.get(i).setAmount(amount);
-
-				System.out.println("Package updated");
-
-			} else {
-				System.out.println("Code not found!");
-			}
-		}
-	}
-
-	// DELETE PACKAGE
-	public static void deletePackage(ArrayList<Package> packageList, int delete) {
-
-		
-
-		for (int i = 0; i < packageList.size(); i++) {
-
-			if (packageList.get(i).getCode() == delete) {
-				packageList.remove(i);
-				System.out.println("Package removed!");
-			}
-		}
-	}
 
 	// ----------------------------------------Manage Request Quotation---------------------------------------------------//
 
@@ -712,60 +550,159 @@ public static void updateQuotations(ArrayList<Quotation>Quotation){
 
 	// ----------------------------------------Manage Customer-----------------------------------------------------------------------
 
-	public static Customer inputCustomer() {
-
-		String uName = Helper.readString("Enter name> ");
-		String uRole = Helper.readString("Enter role> ");
-		String uEmail = Helper.readString("Enter email> ");
-		String uPassword = Helper.readString("Enter password> ");
-		String uStatus = Helper.readString("Enter status> ");
-
-		Customer uCust = new Customer(uName, uRole, uEmail, uPassword, uStatus);
-		return uCust;
-	}
-
-
-	//Add Customer
-	public static void addCustomer(ArrayList<Customer> userCustList, Customer uCust) {
-
-		userCustList.add(uCust);
-		System.out.println("Customer added!");
-	}
-
-
-	//Retrieve Customer
-	public static String retrieveAllCustomer(ArrayList<Customer> userCustList) {
-
-		String output = "";
-
-		for (int i = 0; i < userCustList.size(); i++) {
-
-			output += String.format("%-10s %-20s %-10s %-10s %-20s\n", userCustList.get(i).getName(),
-					userCustList.get(i).getRole(), userCustList.get(i).getEmail(), userCustList.get(i).getPassword(),
-					userCustList.get(i).getStatus());
-		}
-
-		return output;
-	}
-
-	//View Customer
-	public static void viewCustomer(ArrayList<Customer> userCustList) {
-
-		String output = String.format("%-10s %-20s %-10s %-10s %-20s\n", "NAME", "ROLE", "EMAIL", "PASSWORD", "STATUS");
-		output += retrieveAllCustomer(userCustList);
-		System.out.println(output);
-	}
-
-	//Delete Customer
-	public static void deleteCustomer(ArrayList<Customer> userCustList, String delete) {
-		
-		
-		for (int i = 0; i < userCustList.size(); i++) {
-
-			if (userCustList.get(i).getName().equals(delete)) {
-				userCustList.remove(i);
-				System.out.println("Customer removed!");
+        
+        // Search Customer
+        //timorthy
+        ArrayList<Customer> CustomerList = new ArrayList<Customer>();
+		String town = Helper.readString("Enter town > ");
+		boolean found1 = false;
+		for (int i = 0; i < CustomerList.size(); i++) {
+			if (town.equalsIgnoreCase(CustomerList.get(i).getTown())) {
+				String output = String.format(
+						"Name: %s\nRole: %s\nEmail: %s\nPassword: %s\nStatus: %s\nTown: %s\n",
+						CustomerList.get(i).getName(), CustomerList.get(i).getRole(),
+						CustomerList.get(i).getEmail(), CustomerList.get(i).getPassword(),
+						CustomerList.get(i).getStatus(), CustomerList.get(i).getTown());
+				System.out.println(output);
+				found1 = true;
 			}
 		}
-	}
+		if (found == false) {
+			System.out.println("User with specific town not found!");
+		}
+		
+		
+		// Add Customer
+		
+		// Timorthy
+		String name = Helper.readString("Enter name of user to edit > ");
+		boolean found = false;
+		for (int i = 0; i < CustomerList.size(); i++) {
+			if (name.equalsIgnoreCase(CustomerList.get(i).getName())) {
+				String email = Helper.readString("Enter new email > ");
+				String password = Helper.readString("Enter new password > ");
+				CustomerList.get(i).setEmail(email);
+				CustomerList.get(i).setPassword(password);
+				found1 = true;
+			}
+		}
+		if (found == false) {
+			System.out.println("User with specific name not found!");
+		} else {
+			System.out.println("User account updated");
+		}
+		
+		// View Customer
+		for (Customer c : CustomerList) {
+			String output = String.format("Name: %s\nRole: %s\nEmail: %s\nPassword: %s\nStatus: %s\n Town%s\n",
+					c.getName(), c.getRole(), c.getEmail(), c.getPassword(), c.getStatus(), c.getTown());
+			System.out.println(output);
+		}
+		
+		// Delete Customer
+		String name = Helper.readString("Enter name > ");
+		boolean found = false;
+		for (int i = 0; i < CustomerList.size(); i++) {
+			if (name.equalsIgnoreCase(CustomerList.get(i).getName())) {
+				CustomerList.remove(i);
+				found = true;
+			}
+		}
+		if (found == false) {
+			System.out.println("Name not found!");
+		}
+		// Login Customer
+		String email = Helper.readString("Enter email > ");
+		String password = Helper.readString("Enter password > ");
+		boolean success = false;
+		for (int i = 0; i < CustomerList.size(); i++) {
+			if (CustomerList.get(i).isBlocked()) {
+				if (email.equalsIgnoreCase(CustomerList.get(i).getEmail())) {
+					if (password.equalsIgnoreCase(CustomerList.get(i).getPassword())) {
+						success = true;
+					} else {
+						CustomerList.get(i).setAttempts(CustomerList.get(i).getAttempts() + 1);
+						if (CustomerList.get(i).getAttempts() > 3) {
+							CustomerList.get(i).setBlocked(true);
+							System.out.println("User is blocked from too many attempts!");
+						}
+					}
+					System.out.println("Wrong Password!");
+				}
+				if (success) {
+					System.out.println("Logged in!");
+				}
+			} else {
+				System.out.println("User is blocked from too many attempts!");
+			}
+		}
+		int option = 0;
+	
+		while (option != 7) {
+			System.out.println("=========================");
+			System.out.println("1. Add User Account");
+			System.out.println("2. View All User");
+			System.out.println("3. Delete user by name");
+			System.out.println("4. Search user by town");
+			System.out.println("5. Edit user account");
+			System.out.println("6. User Login");
+			System.out.println("7. Exit");
+			option = Helper.readInt("Choose an option > ");
+			System.out.println("=========================");
+			if (option == 1) {
+				String name = Helper.readString("Enter your name > ");
+				String role = Helper.readString("Enter your role > ");
+				String email = Helper.readString("Enter your email > ");
+				String password = Helper.readString("Enter your password > ");
+				String status = Helper.readString("Enter your status > ");
+				String town = Helper.readString("Enter your town > ");
+				CustomerList.add(new Customer(name, role, email, password, status, town));
+				/*
+				 * } else if (option == 2) { for (ManageCustomer c : CustomerList) { String
+				 * output = String.
+				 * format("Name: %s\nRole: %s\nEmail: %s\nPassword: %s\nStatus: %s\n Town%s\n",
+				 * c.getName(), c.getRole(), c.getEmail(), c.getPassword(), c.getStatus(),
+				 * c.getTown()); System.out.println(output); } } else if (option == 3) { String
+				 * name = Helper.readString("Enter name > "); boolean found = false; for (int i
+				 * = 0; i < CustomerList.size(); i++) { if
+				 * (name.equalsIgnoreCase(CustomerList.get(i).getName())) {
+				 * CustomerList.remove(i); found = true; } } if (found == false) {
+				 * System.out.println("Name not found!"); } } else if (option == 4) { String
+				 * town = Helper.readString("Enter town > "); boolean found = false; for (int i
+				 * = 0; i < CustomerList.size(); i++) { if
+				 * (town.equalsIgnoreCase(CustomerList.get(i).getTown())) { String output =
+				 * String.format(
+				 * "Name: %s\nRole: %s\nEmail: %s\nPassword: %s\nStatus: %s\nTown: %s\n",
+				 * CustomerList.get(i).getName(), CustomerList.get(i).getRole(),
+				 * CustomerList.get(i).getEmail(), CustomerList.get(i).getPassword(),
+				 * CustomerList.get(i).getStatus(), CustomerList.get(i).getTown());
+				 * System.out.println(output); found = true; } } if (found == false) {
+				 * System.out.println("User with specific town not found!"); } } else if (option
+				 * == 5) { String name = Helper.readString("Enter name of user to edit > ");
+				 * boolean found = false; for (int i = 0; i < CustomerList.size(); i++) { if
+				 * (name.equalsIgnoreCase(CustomerList.get(i).getName())) { String email =
+				 * Helper.readString("Enter new email > "); String password =
+				 * Helper.readString("Enter new password > ");
+				 * CustomerList.get(i).setEmail(email);
+				 * CustomerList.get(i).setPassword(password); found = true; } } if (found ==
+				 * false) { System.out.println("User with specific name not found!"); } else {
+				 * System.out.println("User account updated"); } } else if (option == 6) {
+				 * String email = Helper.readString("Enter email > "); String password =
+				 * Helper.readString("Enter password > "); boolean success = false; for (int i =
+				 * 0; i < CustomerList.size(); i++) { if (CustomerList.get(i).isBlocked()) { if
+				 * (email.equalsIgnoreCase(CustomerList.get(i).getEmail())) { if
+				 * (password.equalsIgnoreCase(CustomerList.get(i).getPassword())) { success =
+				 * true; } else {
+				 * CustomerList.get(i).setAttempts(CustomerList.get(i).getAttempts() + 1); if
+				 * (CustomerList.get(i).getAttempts() > 3) {
+				 * CustomerList.get(i).setBlocked(true);
+				 * System.out.println("User is blocked from too many attempts!"); } }
+				 * System.out.println("Wrong Password!"); } if (success) {
+				 * System.out.println("Logged in!"); } } else {
+				 * System.out.println("User is blocked from too many attempts!"); } }
+				 */
+			}
+		}
 }
+}
+		
