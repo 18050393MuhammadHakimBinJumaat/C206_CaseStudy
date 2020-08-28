@@ -62,7 +62,7 @@ public class C206_CaseStudy {
 
 			} else if (option == 2) {
 				// Login as Customer
-				// Joshua
+				
 				CustomerMenu();
 
 				int CustomerOption = Helper.readInt("Enter an option > ");
