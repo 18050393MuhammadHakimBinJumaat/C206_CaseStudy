@@ -373,7 +373,20 @@ if (found == false) {
 	System.out.println("Appointment successfully Updated");
 }
 
+//view appointment
+//salma
+public static void viewappointment {
+	
 
+		ArrayList<Appointment> AppointmentList1 = new ArrayList<Appointment>();
+		for (Appointment a : AppointmentList1) {
+			String output = String.format("Name: %s\nCustomerName: %s\nDesignerName\n",
+					a.getcustomerName(), a.getdesignerName());
+			System.out.println(output);
+		}
+		
+
+}
 
 
 	// -----------------------------Manage Package------------------------//
