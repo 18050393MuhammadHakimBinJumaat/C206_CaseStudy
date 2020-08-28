@@ -381,6 +381,7 @@ if (found == false) {
 	
 	// View package
 	//Hakim
+public static void viewpackage() {
 	ArrayList<Package> PackageList = new ArrayList<Package>();
 	
 	public static String viewAllPackage(ArrayList<Package>PackageList) {
@@ -392,6 +393,7 @@ if (found == false) {
 	}
 	// Add package
 	//Hakim
+	public static void addpackage() {
 	public static Package addPackage() {
 	String PropType = Helper.readString("Enter Property Type > ");
 	double Areasize = Helper.readDouble("Enter Areasize > ");
@@ -412,6 +414,7 @@ if (found == false) {
 	return null;
 }
 
+	
 
 	// ---------------Manage Request Quotation-----------------//
 
@@ -564,6 +567,7 @@ public static void updateQuotations(ArrayList<Quotation>Quotation){
         
         // Search Customer
         //timorthy
+        
         public static void searchCustomer() {
         	 ArrayList<Customer> CustomerList = new ArrayList<Customer>();
 		String town = Helper.readString("Enter town > ");
