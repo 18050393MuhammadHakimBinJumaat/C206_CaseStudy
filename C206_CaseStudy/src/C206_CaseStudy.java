@@ -323,7 +323,7 @@ public class C206_CaseStudy {
 		System.out.println("3. Delete Quotation");
 	}
 
-	// --------------------------------------------Manage Appointment---------------------------------------------------//
+	// -----------------------Manage Appointment-----------------------//
 // Add Appointment
 	//Salma
 String CustomerName = Helper.readString("Enter your Name > ");
@@ -365,7 +365,7 @@ if (found == false) {
 } else {
 	System.out.println("Appointment successfully Updated");
 }
-	// ------------------------------------------------Manage Package---------------------------------------------------//
+	// -----------------------------Manage Package------------------------//
 
 	
 	// View package
@@ -402,7 +402,7 @@ if (found == false) {
 }
 
 
-	// ----------------------------------------Manage Request Quotation---------------------------------------------------//
+	// ---------------Manage Request Quotation-----------------//
 
 
 
@@ -468,7 +468,7 @@ if (found == false) {
 			}
 		}
 	}
-	// -----------------------------------------------Manage Quotation---------------------------------------------------//
+	// --------------------------Manage Quotation----------
 
 	//Liu DeHai
     ArrayList<Quotation> QList = new ArrayList<Quotation>();
@@ -548,7 +548,7 @@ public static void updateQuotations(ArrayList<Quotation>Quotation){
 
 
 
-	// ----------------------------------------Manage Customer-----------------------------------------------------------------------
+	// ---------------Manage Customer------------------
 
         
         // Search Customer
