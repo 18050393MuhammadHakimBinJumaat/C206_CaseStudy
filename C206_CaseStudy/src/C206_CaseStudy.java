@@ -590,18 +590,18 @@ public class C206_CaseStudy {
 	// Cheng Han
 	public static RequestQuotation AddRequestQuotation() {
 
-		String PropType = Helper.readString("Enter Property Type > ");
-		double Areasize = Helper.readDouble("Enter Areasize > ");
-		int Contact = Helper.readInt("Enter Contact> ");
-		String Email = Helper.readString("Enter Email> ");
-		double Budget = Helper.readDouble("Enter Budget : ");
-		String Date = Helper.readString("Enter Complete Date :");
-		LocalDate completeDate = LocalDate.parse(Date);
-		String RenoType = Helper.readString("Enter Renovation Type : ");
-		String RenoStyle = Helper.readString("Enter Renovation Style : ");
-		String Urg = Helper.readString("Urgency : ");
+		String propertytype = Helper.readString("Enter Property Type > ");
+		double areasize = Helper.readDouble("Enter Areasize > ");
+		int contact = Helper.readInt("Enter Contact> ");
+		String email = Helper.readString("Enter Email> ");
+		double budget = Helper.readDouble("Enter Budget : ");
+		String date = Helper.readString("Enter Complete Date :");
+		LocalDate completeDate = LocalDate.parse(date);
+		String renovationtype = Helper.readString("Enter Renovation Type : ");
+		String renovationstyle = Helper.readString("Enter Renovation Style : ");
+		String urgency = Helper.readString("Urgency : ");
 
-		RequestQuotation rq = new RequestQuotation(PropType, Areasize, Contact, Email, Budget, completeDate, RenoType, RenoStyle, Urg);
+		RequestQuotation rq = new RequestQuotation(propertytype, areasize, contact, email, budget, completeDate, renovationtype, renovationstyle, urgency);
 		
 		ArrayList<RequestQuotation> QuotList = new ArrayList<RequestQuotation>();
 		QuotList.add(rq);
