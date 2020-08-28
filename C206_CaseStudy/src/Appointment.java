@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 /**
@@ -24,7 +25,18 @@ public class Appointment {
 	     this.appointmentDate = appointmentDate;
 	     this.appointmentTime = appointmentTime;
 	     }
-	     public String 
+	     /**
+		 * @param localDate3
+		 * @param localtime3
+		 * @param designerName2
+		 * @param address
+		 * @param customerName2
+		 */
+		public Appointment(LocalDate localDate3, LocalTime localtime3, String designerName2, String address,
+				String customerName2) {
+			// TODO Auto-generated constructor stub
+		}
+		public String 
 	     getcustomerName() {
 	    	 return CustomerName;
 	     }
@@ -81,6 +93,27 @@ public class Appointment {
 		public static String retrieveAllAppointment(LocalDate appointmentlist1) {
 			// TODO Auto-generated method stub
 			return null;
+		}
+		/**
+		 * @param address
+		 */
+		public void setAddress(String address) {
+			// TODO Auto-generated method stub
+			
+		}
+		/**
+		 * @param localDate1
+		 */
+		public void setDateOfAppointment(LocalDate localDate1) {
+			// TODO Auto-generated method stub
+			
+		}
+		/**
+		 * @param localtime2
+		 */
+		public void setTimeOfAppointment(LocalTime localtime2) {
+			// TODO Auto-generated method stub
+			
 		}
 	
 		

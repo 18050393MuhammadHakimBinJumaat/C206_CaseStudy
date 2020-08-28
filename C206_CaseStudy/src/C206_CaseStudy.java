@@ -325,7 +325,7 @@ public class C206_CaseStudy {
 	// --------------------------------------------Manage Appointment---------------------------------------------------//
 
 
-	private static void adminAppointment() {
+	private static <designerList> void adminAppointment() {
 
 		appointmentMenu();
 		int appointmentOption = Helper.readInt("Enter an option > ");
@@ -346,7 +346,7 @@ public class C206_CaseStudy {
 
 			for (int i = 0; i < appointmentList.size(); i++) {
 
-				if (customerName.equalsIgnoreCase(appointmentList.get(i).getCustomer())) {
+				if (customerName.equalsIgnoreCase(appointmentList.get(i).getcustomerName())) {
 
 					if (isAbleUpdate(appointmentList, appointmentList.get(i), customerName, LocalDate.now()) == true) {
 						updateMenu();
@@ -565,26 +565,6 @@ public class C206_CaseStudy {
 	}
 
 	// ----------------------------------------Manage Request Quotation---------------------------------------------------//
-// VIEW ALL
-	//Cheng Han
-	
-	public static String retrieveAllRequestQuotation(ArrayList<RequestQuotation> requestquotationList) {
-
-		String output = "";
-
-		for (int i = 0; i < requestquotationList.size(); i++) {
-
-			output += String.format("%-15s %-10.2f %-10d %-20s %-10.2f %-15s %-15s %-15s %-15s\n",
-					requestquotationList.get(i).getpropertyType(), requestquotationList.get(i).getAreaSize(),
-					requestquotationList.get(i).getcontact(), requestquotationList.get(i).getEmail(),
-					requestquotationList.get(i).getBudget(), requestquotationList.get(i).getCompletedate(),
-					requestquotationList.get(i).getRenovationType(), requestquotationList.get(i).getRenoStyle(),
-					requestquotationList.get(i).getsrequest());
-
-		}
-
-		return output;
-	}
 
 
 
