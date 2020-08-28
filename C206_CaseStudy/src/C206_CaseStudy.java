@@ -312,6 +312,7 @@ public class C206_CaseStudy {
 	private static void requestquotationMenu() {
 		System.out.println("1. View all Request Quotation");
 		System.out.println("2. Remove Request Quotation");
+		System.out.println("3. Delete Request Quotation");
 
 	}
 
@@ -321,6 +322,7 @@ public class C206_CaseStudy {
 		System.out.println("1. View All ID");
 		System.out.println("2. Add Quotation");
 		System.out.println("3. Delete Quotation");
+		System.out.println("4. Update Quotation");
 	}
 
 	// -----------------------Manage Appointment-----------------------//
