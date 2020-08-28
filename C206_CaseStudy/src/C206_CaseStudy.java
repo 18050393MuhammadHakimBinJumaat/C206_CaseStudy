@@ -214,7 +214,7 @@ public class C206_CaseStudy {
 		String customerName = Helper.readString("Enter Customer Name: ");
 
 		for (int i = 0; i < appointmentList.size(); i++) {
-			if (customerName.equalsIgnoreCase(appointmentList.get(i).getCustomer())) {
+			if (customerName.equalsIgnoreCase(appointmentList.get(i).getcustomerName())) {
 				removeAppointment(appointmentList, appointmentList.get(i), customerName);
 
 			} else {

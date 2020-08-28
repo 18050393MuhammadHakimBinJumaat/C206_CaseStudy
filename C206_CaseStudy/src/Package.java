@@ -38,4 +38,58 @@ public class Package {
 	public void setDeletePackage(String deletePackage) {
 		this.deletePackage = deletePackage;
 	}
+
+
+	/**
+	 * @return
+	 */
+	public Object getStatus() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	/**
+	 * @return
+	 */
+	public Object getPassword() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	/**
+	 * @return
+	 */
+	public Object getEmail() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	/**
+	 * @return
+	 */
+	public Object getRole() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	/**
+	 * @return
+	 */
+	public Object getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	/**
+	 * @return
+	 */
+	public Object getTown() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

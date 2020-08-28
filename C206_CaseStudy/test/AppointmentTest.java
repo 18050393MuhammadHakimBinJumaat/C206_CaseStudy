@@ -71,8 +71,8 @@ public class AppointmentTest {
   	private static void addAppointment(ArrayList<Appointment> appointmentList2, Appointment ap12) {
 		// TODO Auto-generated method stub
 		
-  		
-  		public static viewAppointment() {
+  		@Test
+  		public static viewAppointmentTest(); {
   			// Test if Item list is not null but empty -boundary
   			assertNotNull("Test if there is valid Appointment arraylist to retrieve", AppointmentList1);
   			
