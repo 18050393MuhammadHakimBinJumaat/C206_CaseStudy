@@ -1,4 +1,4 @@
-yimport java.time.LocalDate;
+import java.time.LocalDate;
 
 /**
  * I declare that this code was written by me.
@@ -12,15 +12,19 @@ public class Package {
 	private String addPackage ;
 	private String viewPackage;
 	private String deletePackage;
+	private String updatePackage;
 	
-	public Package(String addPackage, String viewPackage, String deletePackage) {
+	
+
+	
+	
+	public Package(String addPackage, String viewPackage, String deletePackage, String updatePackage) {
 		super();
 		this.addPackage = addPackage;
 		this.viewPackage = viewPackage;
 		this.deletePackage = deletePackage;
+		this.updatePackage = updatePackage;
 	}
-	
-	
 	public String getAddPackage() {
 		return addPackage;
 	}
@@ -38,5 +42,65 @@ public class Package {
 	}
 	public void setDeletePackage(String deletePackage) {
 		this.deletePackage = deletePackage;
+	}
+
+
+	/**
+	 * @return
+	 */
+	public Object getStatus() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	/**
+	 * @return
+	 */
+	public Object getPassword() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	/**
+	 * @return
+	 */
+	public Object getEmail() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	/**
+	 * @return
+	 */
+	public Object getRole() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	/**
+	 * @return
+	 */
+	public Object getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	/**
+	 * @return
+	 */
+	public Object getTown() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public String getDate() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
