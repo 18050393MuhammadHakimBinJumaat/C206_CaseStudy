@@ -427,7 +427,7 @@ public static void viewpackage() {
 	return null;
 }
 
-	
+	}
 
 	// ---------------Manage Request Quotation-----------------//
 
@@ -626,6 +626,8 @@ public static void updateQuotations(ArrayList<Quotation>Quotation){
 		}
 		// View Customer
 		public static void ViewCustomer() {
+			ArrayList<Customer> CustomerList = new ArrayList<Customer>();
+		
 		for (Customer c : CustomerList) {
 			String output = String.format("Name: %s\nRole: %s\nEmail: %s\nPassword: %s\nStatus: %s\n Town%s\n",
 					c.getName(), c.getRole(), c.getEmail(), c.getPassword(), c.getStatus(), c.getTown());
@@ -646,6 +648,8 @@ public static void updateQuotations(ArrayList<Quotation>Quotation){
 			System.out.println("Name not found!");
 		}
 		// Login Customer
+		
+		
 		String email = Helper.readString("Enter email > ");
 		String password = Helper.readString("Enter password > ");
 		boolean success = false;
