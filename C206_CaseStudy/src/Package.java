@@ -25,6 +25,9 @@ public class Package {
 		this.deletePackage = deletePackage;
 		this.updatePackage = updatePackage;
 	}
+	public Package(int i, String string, Object object, Object object2, double d) {
+		// TODO Auto-generated constructor stub
+	}
 	public String getAddPackage() {
 		return addPackage;
 	}
@@ -102,5 +105,13 @@ public class Package {
 	public String getDate() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	public void setDescription(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setAmount(int i) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -216,7 +216,7 @@ public class C206_CaseStudyTest {
 	}
 
 
-
+//Hakim
 	@Test
 	public void addPackageTest() {
 		
@@ -236,7 +236,7 @@ public class C206_CaseStudyTest {
 		assertSame("Test that Package is added", p2, packageList.get(1));
 	}
 
-
+//Hakim
 	@Test
 	public void retrievePackageTest() {
 		// Test if Item list is not null but empty -boundary
@@ -260,7 +260,7 @@ public class C206_CaseStudyTest {
 
 	}
 	
-
+//Hakim
 	@Test
 	public void updatePackageTest() {
 		// Test if Item list is not null but empty -boundary
@@ -280,7 +280,7 @@ public class C206_CaseStudyTest {
 
 		assertEquals("Test that updatePackage", testOutput, allPackage);
 	}
- 
+ //Hakim
 	@Test
 	public void deletePackageTest() {
 		

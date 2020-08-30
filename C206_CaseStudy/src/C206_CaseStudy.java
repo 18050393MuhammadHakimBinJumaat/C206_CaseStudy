@@ -738,5 +738,20 @@ public static void updateQuotations(ArrayList<Quotation>Quotation){
 			}
 		}
 }
+
+		public static void addPackage(ArrayList<Package> packageList, Package p1) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		public static String retrieveAllPackage(ArrayList<Package> packageList) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		public static void deletePackage(ArrayList<Package> packageList, int i) {
+			// TODO Auto-generated method stub
+			
+		}
 }
 		
