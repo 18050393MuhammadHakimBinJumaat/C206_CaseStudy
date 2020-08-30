@@ -375,8 +375,7 @@ if (found == false) {
 
 //view appointment
 //salma
-public static void viewappointment {
-	
+public static void viewappointment() {
 
 		ArrayList<Appointment> AppointmentList1 = new ArrayList<Appointment>();
 		for (Appointment a : AppointmentList1) {
@@ -406,7 +405,7 @@ public static void viewpackage() {
 	}
 	// Add package
 	//Hakim
-	public static void addpackage() {
+
 	public static Package addPackage() {
 	String PropType = Helper.readString("Enter Property Type > ");
 	double Areasize = Helper.readDouble("Enter Areasize > ");
@@ -427,7 +426,7 @@ public static void viewpackage() {
 	return null;
 }
 
-	}
+	
 
 	// ---------------Manage Request Quotation-----------------//
 
@@ -688,13 +687,13 @@ public static void updateQuotations(ArrayList<Quotation>Quotation){
 			option = Helper.readInt("Choose an option > ");
 			System.out.println("=========================");
 			if (option == 1) {
-				String name = Helper.readString("Enter your name > ");
+				String name1 = Helper.readString("Enter your name > ");
 				String role = Helper.readString("Enter your role > ");
-				String email = Helper.readString("Enter your email > ");
-				String password = Helper.readString("Enter your password > ");
+				String email1 = Helper.readString("Enter your email > ");
+				String password1 = Helper.readString("Enter your password > ");
 				String status = Helper.readString("Enter your status > ");
 				String town = Helper.readString("Enter your town > ");
-				CustomerList.add(new Customer(name, role, email, password, status, town));
+				CustomerList.add(new Customer(name1, role, email1, password1, status, town));
 				/*
 				 * } else if (option == 2) { for (ManageCustomer c : CustomerList) { String
 				 * output = String.
