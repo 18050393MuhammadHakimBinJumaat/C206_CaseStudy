@@ -8,7 +8,7 @@ public class C206_CaseStudy {
 
 
 	private static final int OPTION_QUIT = 4;
-	private static final DateTimeFormatter format = DateTimeFormatter.ofPattern("d/MM/yyy");
+	private static final DateTimeFormatter format = DateTimeFormatter.ofPattern("D/MM/yyy");
 	private static final DateTimeFormatter date_format = DateTimeFormatter.ofPattern("d/MM/yyyy");
 	private static final DateTimeFormatter time_format = DateTimeFormatter.ofPattern("H:mm");
 	ArrayList<Appointment> AppointmentList = new ArrayList<Appointment>();
@@ -21,213 +21,15 @@ public class C206_CaseStudy {
 
 		// ArrayList Package
 		ArrayList<Package> packageList = new ArrayList<Package>();
-		String start = "10/10/2020";
-		String end = "10/11/2020";
+		String start = "01/08/2020";
+		String end = "30/08/2020";
 		LocalDate startdate = LocalDate.parse(start, format);
 		LocalDate enddate = LocalDate.parse(end, format);
 
 		// ArrayList RequestQuotation and Add
 		// Cheng Han
-		ArrayList<RequestQuotation> requestquotationList = new ArrayList<RequestQuotation>();
-		requestquotationList.add(
-				new RequestQuotation("HDB", 100, 999, "123@gmail.com", 100.1, null, "Whole house", "modern", "none"));
-
-		// ArrayList Quotation 
-		ArrayList<Quotation> manageQuotationList = new ArrayList<Quotation>();
-
-		// ArrayList Customer
-		ArrayList<Customer> CustomerList = new ArrayList<Customer>();
-
-	
-		int option = 0;
-
-		
-		while (option != OPTION_QUIT) {
-
-			menu();
-
-			option = Helper.readInt("Enter an option > ");
-
-			if (option == 1) {
-				// View all package
-				C206_CaseStudy.viewAllPackage(packageList);
-
-			} else if (option == 2) {
-				// Login as Customer
-				
-				CustomerMenu();
-
-				int CustomerOption = Helper.readInt("Enter an option > ");
-
-				if (CustomerOption == 1) {
-					// Visitor account Registration
-
-					C206_CaseStudy.addCustomer();
-
-				} else if (CustomerOption == 2) {
-					// Request for Quotation
-					RequestQuotation rq = AddRequestQuotation();
-					C206_CaseStudy.addRequestQuotation(requestquotationList, rq);
-
-				} else if (CustomerOption == 3) {
-					// Manage Appointment
-					Helper.line(80, "-");
-					Helper.line(80, "-");
-					System.out.println("Option 1: Add Appointment");
-					System.out.println("Option 2: remove Appointment");
-					System.out.println("Option 3: View all Appointment");
-
-					int customerAppointment = Helper.readInt("Enter an option > ");
-
-					if (customerAppointment == 1) {			
-						Helper.line(80, "-");
-						addAppointment();
-
-					}else if (customerAppointment == 2) {			
-						Helper.line(80, "-");
-						removeAppointment();
-
-					}else if (customerAppointment == 3) {
-						viewAllAppointment(AppointmentList);
-					}
-
-				} else {
-
-					System.out.println("Invaild Option!");
-				}
-
-			} else if (option == 3) {
-
-				// Login as Admin
-				AdminMenue();
-
-				int AdminOption = Helper.readInt("Enter an option > ");
-
-				if (AdminOption == 1) {
-					C206_CaseStudy.CustomerMenu();
-					int CustomerOption = Helper.readInt("Enter an option > ");
-					if (CustomerOption == 1) {
-						C206_CaseStudy.addCustomer();
-
-					} else if (CustomerOption == 2) {
-
-						// Request for Quotation
-						RequestQuotation rq = AddRequestQuotation();
-						C206_CaseStudy.addRequestQuotation(requestquotationList, rq);
-
-					} else if (CustomerOption == 3) {
-						// Manage Appointment
-
-					} else {
-						System.out.println("Invaild Option!");
-					}
-
-					// Manage Customer
-				
-				} else if (AdminOption == 2) {
-
-					C206_CaseStudy.packageMenu();
-
-					int PackageOption = Helper.readInt("Enter an option > ");
-
-					if (PackageOption == 1) {
-						Package pp = inputPackage();
-						C206_CaseStudy.addPackage(packageList, pp);
-
-					} else if (PackageOption == 2) {
-						int delete = Helper.readInt("Enter code to delete > ");
-						C206_CaseStudy.deletePackage(packageList, delete);
-
-					} else if (PackageOption == 3) {
-						C206_CaseStudy.updatePackage(packageList);
-					}
-
-					// Manage Package
-				
-				} else if (AdminOption == 3) {
-
-					C206_CaseStudy.requestquotationMenu();
-					int requestquotationOption = Helper.readInt("Enter an option > ");
-
-					if (requestquotationOption == 1) {
-						C206_CaseStudy.viewAllRequestQuotation(requestquotationList);
-
-					} else if (requestquotationOption == 2) {
-						int delete = Helper.readInt("Enter an code to delete > ");
-						C206_CaseStudy.deleteRequestQuotation(requestquotationList, delete);
-					}
-
-					// Manage Customer
-				} else if (AdminOption == 4) {
-
-					
-					// Manage Quotation
-					C206_CaseStudy.ManageQuotationMenu();
-
-					int quotationOption = Helper.readInt("Enter an option > ");
-
-					if (quotationOption == 1) {
-						C206_CaseStudy.viewAllQuotation(manageQuotationList);
-					}
-
-					else if (quotationOption == 2) {
-						int requestID = Helper.readInt("Enter ID: ");
-						int quotationID = Helper.readInt("Enter Quotation ID: ");
-						String renovationCat = Helper.readString("Enter Renovation Category: ");
-						String description = Helper.readString("Enter Description Of Renovation Items: ");
-						String name = Helper.readString("Enter Designer Name: ");
-						String startDate = Helper.readString("Enter Start Date: ");
-						double totalAmount = Helper.readDouble("Enter Total Quotation Amount: ");
-
-						C206_CaseStudy.addQuotation(manageQuotationList, createQuotation(requestID, quotationID,
-								renovationCat, description, name, startDate, totalAmount));
-					}
-
-					else if (quotationOption == 3) {
-						int delete = Helper.readInt("Enter Quotation ID To Delete: ");
-						C206_CaseStudy.deleteQuotation(manageQuotationList, delete);
-					}
-
-				} else if (AdminOption == 5) {
-					// Manage Appointment
-					adminAppointment();
-
-				} else {
-					System.out.println("Invaild Option!");
-				}
-			}
-		}
-
-	}
-
-	private static void removeAppointment() {
-
-		String customerName = Helper.readString("Enter Customer Name: ");
-
-		for (int i = 0; i < appointmentList.size(); i++) {
-			if (customerName.equalsIgnoreCase(appointmentList.get(i).getcustomerName())) {
-				removeAppointment(appointmentList, appointmentList.get(i), customerName);
-
-			} else {
-				System.out.println("Customer not Found !");
-			}
-		}
-	}
-
-	private static void addAppointment() {
-
-		String customerName = Helper.readString("Enter Customer Name: ");
-		String address = Helper.readString("Enter Address: ");
-		String designerName = Helper.readString("Enter Designer Name: ");
-		String appointmentDate = Helper.readString("Enter appointment Date (dd/mm/yyyy): ");
-		String appointmentTime = Helper.readString("Enter appointment Time (hh:ss): ");
-		LocalDate localDate3 = LocalDate.parse(appointmentDate, date_format);
-		LocalTime localtime3 = LocalTime.parse(appointmentTime, time_format);
-		Appointment appointment1 = new Appointment(localDate3, localtime3, designerName, address,
-				customerName);
-		addAppointment(appointmentList, appointment1);
-	}
-
+		ArrayList<RequestQuotation> QuotList= new ArrayList<RequestQuotation>();
+		QuotList.add(new RequestQuotation("HDB", 200,  800 , "abc@gmail.com", 100.1, null, "Whole house", "modern", "none"));
 
 	public static void setHeader(String header) {
 
@@ -241,9 +43,7 @@ public class C206_CaseStudy {
 
 		C206_CaseStudy.setHeader("Renovation ACE APP");
 		System.out.println("1. View all package");
-		System.out.println("2. Login as Customer");
-		System.out.println("3. Login as Admin");
-		System.out.println("4. Quit");
+		System.out.println("2. Quit");
 		Helper.line(80, "-");
 
 	}
@@ -372,11 +172,11 @@ if (found == false) {
 } else {
 	System.out.println("Appointment successfully Updated");
 }
+}
 
 //view appointment
 //salma
-public static void viewappointment {
-	
+public static void viewappointment() {
 
 		ArrayList<Appointment> AppointmentList1 = new ArrayList<Appointment>();
 		for (Appointment a : AppointmentList1) {
@@ -394,8 +194,8 @@ public static void viewappointment {
 	
 	// View package
 	//Hakim
-public static void viewpackage() {
-	ArrayList<Package> PackageList = new ArrayList<Package>();
+
+	
 	
 	public static String viewAllPackage(ArrayList<Package>PackageList) {
 	for (Package p : PackageList) {
@@ -404,9 +204,10 @@ public static void viewpackage() {
 		System.out.println(output);
 	}
 	}
+
 	// Add package
 	//Hakim
-	public static void addpackage() {
+
 	public static Package addPackage() {
 	String PropType = Helper.readString("Enter Property Type > ");
 	double Areasize = Helper.readDouble("Enter Areasize > ");
@@ -435,11 +236,12 @@ public static void viewpackage() {
 
 	//VIEW REQUEST QUOTATION
 	// Cheng Han
-	public static void viewAllRequestQuotation(ArrayList<RequestQuotation> requestquotationList) {
+	
+	public static void viewAllRequestQuotation(ArrayList<RequestQuotation> QuotList) {
 
 		C206_CaseStudy.setHeader("Request Quotation LIST");
 
-		ArrayList<RequestQuotation> QuotList= new ArrayList<RequestQuotation>();
+	
 		for(RequestQuotation Q : QuotList) {
 		
 		String output = String.format("%-15s %-10s %-10s %-20s %-10s %-15s %-15s %-15s %-15s \n", "PROPERTY TYPE",
@@ -626,6 +428,8 @@ public static void updateQuotations(ArrayList<Quotation>Quotation){
 		}
 		// View Customer
 		public static void ViewCustomer() {
+			ArrayList<Customer> CustomerList = new ArrayList<Customer>();
+		
 		for (Customer c : CustomerList) {
 			String output = String.format("Name: %s\nRole: %s\nEmail: %s\nPassword: %s\nStatus: %s\n Town%s\n",
 					c.getName(), c.getRole(), c.getEmail(), c.getPassword(), c.getStatus(), c.getTown());
@@ -646,6 +450,8 @@ public static void updateQuotations(ArrayList<Quotation>Quotation){
 			System.out.println("Name not found!");
 		}
 		// Login Customer
+		
+		
 		String email = Helper.readString("Enter email > ");
 		String password = Helper.readString("Enter password > ");
 		boolean success = false;
@@ -684,13 +490,13 @@ public static void updateQuotations(ArrayList<Quotation>Quotation){
 			option = Helper.readInt("Choose an option > ");
 			System.out.println("=========================");
 			if (option == 1) {
-				String name = Helper.readString("Enter your name > ");
+				String name1 = Helper.readString("Enter your name > ");
 				String role = Helper.readString("Enter your role > ");
-				String email = Helper.readString("Enter your email > ");
-				String password = Helper.readString("Enter your password > ");
+				String email1 = Helper.readString("Enter your email > ");
+				String password1 = Helper.readString("Enter your password > ");
 				String status = Helper.readString("Enter your status > ");
 				String town = Helper.readString("Enter your town > ");
-				CustomerList.add(new Customer(name, role, email, password, status, town));
+				CustomerList.add(new Customer(name1, role, email1, password1, status, town));
 				/*
 				 * } else if (option == 2) { for (ManageCustomer c : CustomerList) { String
 				 * output = String.
