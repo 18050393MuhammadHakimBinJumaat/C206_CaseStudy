@@ -257,10 +257,10 @@ public static void viewappointment() {
 	// Cheng Han
 	public static RequestQuotation AddRequestQuotation() {
 
-		String propertytype = Helper.readString("Enter Property Type > ");
-		double areasize = Helper.readDouble("Enter Areasize > ");
-		int contact = Helper.readInt("Enter Contact> ");
-		String email = Helper.readString("Enter Email> ");
+		String propertytype = Helper.readString("Enter Property Type : ");
+		double areasize = Helper.readDouble("Enter Areasize  : ");
+		int contact = Helper.readInt("Enter Contact : ");
+		String email = Helper.readString("Enter Email : ");
 		double budget = Helper.readDouble("Enter Budget : ");
 		String date = Helper.readString("Enter Complete Date :");
 		LocalDate completeDate = LocalDate.parse(date);
