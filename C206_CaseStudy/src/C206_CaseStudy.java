@@ -237,7 +237,7 @@ public static void viewappointment() {
 	//VIEW REQUEST QUOTATION
 	// Cheng Han
 	
-	public static void viewAllRequestQuotation(ArrayList<RequestQuotation> QuotList) {
+	public static String viewAllRequestQuotation(ArrayList<RequestQuotation> QuotList) {
 
 		C206_CaseStudy.setHeader("Request Quotation LIST");
 
