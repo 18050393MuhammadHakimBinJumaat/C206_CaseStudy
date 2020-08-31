@@ -89,7 +89,7 @@ public class C206_CaseStudyTest {
 		assertEquals("Test that Request Quotation arraylist size is 2", 2, QuotList.size());
 
 		//test if the expected output string same as the list of package retrieved from the SourceCentre	
-		allRequestQuotation= C206_CaseStudy.retrieveAllRequestQuotation(QuotList);
+		allRequestQuotation= C206_CaseStudy.viewAllRequestQuotation(QuotList);
 		testOutput = String.format("%-15s %-10.2f %-10d %-20s %-10.2f %-15s %-15s %-15s %-15s\n", "HDB", 100.00, 999, "123@gmail.com", 100.1, null, "Whole house", "modern", "none");
 		testOutput += String.format("%-15s %-10.2f %-10d %-20s %-10.2f %-15s %-15s %-15s %-15s\n","HDB", 200.00, 888, "456@gmail.com", 200.1, null, "Living room", "old", "none" );
 
