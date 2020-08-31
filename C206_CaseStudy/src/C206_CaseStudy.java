@@ -67,7 +67,7 @@ public class C206_CaseStudy {
 	}
 
 
-	private static void AdminMenue() {
+	private static void AdminMenu() {
 
 		C206_CaseStudy.setHeader("Admin Home Page");
 		System.out.println("1. Manage Customer");
@@ -77,16 +77,15 @@ public class C206_CaseStudy {
 		System.out.println("5. Manage Appointment");
 	}
 
-	// -----------------------------------------------------Menu---------------------------------------------------//
+	// -------------MENU---------------
 
 
 	private static void appointmentMenu() {
 
-		System.out.println("1. View All Designers");
-		System.out.println("2. Update Appointment");
-		System.out.println("3. Delete Appointment");
-		System.out.println("4. Add Appointment");
-		System.out.println("5. View Appointment");
+		System.out.println("1. Update Appointment");
+		System.out.println("2. Delete Appointment");
+		System.out.println("3. Add Appointment");
+		System.out.println("4. View Appointment");
 
 	}
 
@@ -101,8 +100,9 @@ public class C206_CaseStudy {
 
 	private static void requestquotationMenu() {
 		System.out.println("1. View all Request Quotation");
-		System.out.println("2. Remove Request Quotation");
+		System.out.println("2. Add Request Quotation");
 		System.out.println("3. Delete Request Quotation");
+		
 
 	}
 
