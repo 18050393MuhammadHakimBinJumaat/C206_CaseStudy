@@ -31,7 +31,8 @@ public class AddPackage {
 			System.out.println("1. Add Package");
 			System.out.println("2. View Package");
 			System.out.println("3. Update Package");
-			System.out.println("4. Exit");
+			System.out.println("4. Search Package");
+			System.out.println("5. Exit");
 			option = Helper.readInt("Choose an option > ");
 			System.out.println("=========================");
 			if (option == 1) {
@@ -44,6 +45,6 @@ public class AddPackage {
 				PackageList.addAll(new Customer(code, description, startDate, endDate, amountPackage));
 		
 		
-	
+			
 	}
 }
