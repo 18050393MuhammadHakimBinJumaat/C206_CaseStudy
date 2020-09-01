@@ -363,6 +363,26 @@ public class C206_CaseStudyTest {
 		assertEquals("Test that Request Quotation arraylist size is 1", 1, QuotList.size());
 
 	}
+	//Sprint 2
+	
+	//Cheng Han
+	public void updateRequestQuotationTest() {
+     
+        assertNotNull("Test if there is valid Request Quotation arraylist to retrieve item", QuotList);
+
+       
+        C206_CaseStudy.addRequestQuotation(QuotList, rq1);
+
+
+     
+        QuotList.get(0).setBudget(300.00);
+
+ 
+        String allRequestQuotation= C206_CaseStudy.viewAllRequestQuotation(QuotList);
+        String testOutput = String.format("%-10d %-15s %-10.2f %-10d %-20s %-10.2f %-15s %-15s %-15s %-15s\n",1,"HDB", 100.00, 999, "123@gmail.com", 300.00, null, "Whole house", "modern", "none" );
+
+        assertEquals("Test that updateRequestQuotation", testOutput, allRequestQuotation);
+    }
 }
 
 
