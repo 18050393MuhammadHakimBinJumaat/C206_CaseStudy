@@ -13,11 +13,49 @@ public class Package {
 	private String viewPackage;
 	private String deletePackage;
 	private String updatePackage;
+	private String Code;
+	private String Description;
+	private String StartDate;
+	private String EndDate;
+	private String PackageAmount;
 	
 	
 
 	
 	
+	public void setUpdatePackage(String updatePackage) {
+		this.updatePackage = updatePackage;
+	}
+	public void setCode(String code) {
+		Code = code;
+	}
+	public void setStartDate(String startDate) {
+		StartDate = startDate;
+	}
+	public void setEndDate(String endDate) {
+		EndDate = endDate;
+	}
+	public void setPackageAmount(String packageAmount) {
+		PackageAmount = packageAmount;
+	}
+	public String getUpdatePackage() {
+		return updatePackage;
+	}
+	public String getCode() {
+		return Code;
+	}
+	public String getDescription() {
+		return Description;
+	}
+	public String getStartDate() {
+		return StartDate;
+	}
+	public String getEndDate() {
+		return EndDate;
+	}
+	public String getPackageAmount() {
+		return PackageAmount;
+	}
 	public Package(String addPackage, String viewPackage, String deletePackage, String updatePackage) {
 		super();
 		this.addPackage = addPackage;

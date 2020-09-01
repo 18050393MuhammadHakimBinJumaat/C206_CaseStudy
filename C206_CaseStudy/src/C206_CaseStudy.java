@@ -67,7 +67,7 @@ public class C206_CaseStudy {
 	}
 
 
-	private static void AdminMenue() {
+	private static void AdminMenu() {
 
 		C206_CaseStudy.setHeader("Admin Home Page");
 		System.out.println("1. Manage Customer");
@@ -77,16 +77,15 @@ public class C206_CaseStudy {
 		System.out.println("5. Manage Appointment");
 	}
 
-	// -----------------------------------------------------Menu---------------------------------------------------//
+	// -------------MENU---------------
 
 
 	private static void appointmentMenu() {
 
-		System.out.println("1. View All Designers");
-		System.out.println("2. Update Appointment");
-		System.out.println("3. Delete Appointment");
-		System.out.println("4. Add Appointment");
-		System.out.println("5. View Appointment");
+		System.out.println("1. Update Appointment");
+		System.out.println("2. Delete Appointment");
+		System.out.println("3. Add Appointment");
+		System.out.println("4. View Appointment");
 
 	}
 
@@ -101,8 +100,9 @@ public class C206_CaseStudy {
 
 	private static void requestquotationMenu() {
 		System.out.println("1. View all Request Quotation");
-		System.out.println("2. Remove Request Quotation");
+		System.out.println("2. Add Request Quotation");
 		System.out.println("3. Delete Request Quotation");
+		
 
 	}
 
@@ -237,7 +237,7 @@ public static void viewappointment() {
 	//VIEW REQUEST QUOTATION
 	// Cheng Han
 	
-	public static void viewAllRequestQuotation(ArrayList<RequestQuotation> QuotList) {
+	public static String viewAllRequestQuotation(ArrayList<RequestQuotation> QuotList) {
 
 		C206_CaseStudy.setHeader("Request Quotation LIST");
 
@@ -257,10 +257,10 @@ public static void viewappointment() {
 	// Cheng Han
 	public static RequestQuotation AddRequestQuotation() {
 
-		String propertytype = Helper.readString("Enter Property Type > ");
-		double areasize = Helper.readDouble("Enter Areasize > ");
-		int contact = Helper.readInt("Enter Contact> ");
-		String email = Helper.readString("Enter Email> ");
+		String propertytype = Helper.readString("Enter Property Type : ");
+		double areasize = Helper.readDouble("Enter Areasize  : ");
+		int contact = Helper.readInt("Enter Contact : ");
+		String email = Helper.readString("Enter Email : ");
 		double budget = Helper.readDouble("Enter Budget : ");
 		String date = Helper.readString("Enter Complete Date :");
 		LocalDate completeDate = LocalDate.parse(date);
